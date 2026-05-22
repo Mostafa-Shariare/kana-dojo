@@ -52,7 +52,10 @@ const KanaRowCard = ({ kanaGroup, globalIndex }: KanaRowCardProps) => {
   const rowLabel = `${firstKana}-group`;
 
   return (
-    <div className={clsx('flex flex-col gap-4 p-4', cardBorderStyles)}>
+    <div className={clsx(
+      'flex flex-col gap-4 p-4 border-0 border-(--border-color) rounded-3xl bg-(--card-color) transition-250 ',
+      // selected && 'outline-4 outline-(--secondary-color)/80',
+    )}>
       {/* Progress Bar */}
       <div className='w-full'>
         <div className='h-7 w-full overflow-hidden rounded-[1rem] bg-(--background-color)'>

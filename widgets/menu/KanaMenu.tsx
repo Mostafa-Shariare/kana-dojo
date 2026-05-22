@@ -45,14 +45,16 @@ const KanaMenu = ({ filter = 'all' }: { filter?: KanaMenuFilter }) => {
             <MousePointer className={cn('fill-current')} />
             Select All Kana
           </ActionButton>
-          <button
-            type='button'
+          <ActionButton
             onClick={() => setViewMode(v => v === 'full' ? 'compact' : 'full')}
-            className='flex cursor-pointer items-center justify-center rounded-3xl border-b-14 border-(--secondary-color-accent) bg-(--secondary-color) px-4 py-3 text-(--background-color) transition-all duration-250 active:translate-y-[14px] active:border-b-0 active:mb-[14px]'
-            aria-label={`Switch to ${viewMode === 'full' ? 'compact' : 'full'} view`}
+            className='w-auto self-stretch px-8 py-3'
+            borderBottomThickness={14}
+            borderRadius='3xl'
+            colorScheme='secondary'
+            borderColorScheme='secondary'
           >
             {viewMode === 'full' ? <LayoutGrid size={22} /> : <List size={22} />}
-          </button>
+          </ActionButton>
         </div>
         <KanaCards filter={filter} viewMode={viewMode} />
         <SelectionStatusBar />
@@ -63,4 +65,3 @@ const KanaMenu = ({ filter = 'all' }: { filter?: KanaMenuFilter }) => {
 };
 
 export default KanaMenu;
-

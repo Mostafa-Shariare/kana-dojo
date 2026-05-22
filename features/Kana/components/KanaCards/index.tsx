@@ -206,7 +206,7 @@ const KanaCards = ({ filter = 'all', viewMode }: KanaCardsProps) => {
   if (USE_NEW_KANA_ROW_DESIGN) {
     if (viewMode === 'full') {
       return (
-        <div className='flex w-full flex-col gap-2'>
+        <div className='flex w-full flex-col gap-4'>
           <KanaUnitSelector
             selected={filterOverride}
             onSelect={(type) => {
@@ -216,7 +216,7 @@ const KanaCards = ({ filter = 'all', viewMode }: KanaCardsProps) => {
             selectedSubset={selectedSubset}
             onSubsetSelect={setSelectedSubset}
           />
-          <div className='grid w-full grid-cols-1 gap-2 md:grid-cols-2 2xl:grid-cols-3 items-start'>
+          <div className='grid w-full grid-cols-1 gap-4 md:grid-cols-2 2xl:grid-cols-3 items-start'>
             {allKanaRowCards.map(card => (
               <KanaRowCard
                 key={`${card.globalIndex}-${card.kanaGroup.groupName}`}
